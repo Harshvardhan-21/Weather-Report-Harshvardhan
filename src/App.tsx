@@ -17,7 +17,7 @@ function App() {
 
       <div className="weather-card">
 
-        <div className="top-bar">
+      
           <h2>Weather Report || Harsh</h2>
 
           <button
