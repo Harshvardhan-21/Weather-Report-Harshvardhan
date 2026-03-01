@@ -8,18 +8,28 @@ function SearchBar({ onSearch }: Props) {
 
   const [city, setCity] = useState("");
 
+  const handleSearch = () => {
+    if (!city.trim()) return;
+    onSearch(city);
+  };
+
   return (
-    <div className="input-group mb-4">
+    <div className="search-container">
 
       <input
-        className="form-control"
+        type="text"
+        className="search-input"
         placeholder="Enter city..."
+        value={city}
         onChange={(e) => setCity(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") handleSearch();
+        }}
       />
 
       <button
-        className="btn btn-dark"
-        onClick={() => onSearch(city)}
+        className="search-btn"
+        onClick={handleSearch}
       >
         Search
       </button>

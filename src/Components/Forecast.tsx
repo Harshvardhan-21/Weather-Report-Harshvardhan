@@ -4,33 +4,41 @@ type Props = {
 
 function Forecast({ forecast }: Props) {
 
-  const getDay = (date: string) => {
+  const getDayName = (date: string) => {
     return new Date(date).toLocaleDateString("en-US", {
       weekday: "short"
     });
   };
 
   return (
-    <div className="row mt-4">
+    <div className="forecast-container">
 
       {forecast.map((item, index) => {
 
-        const icon =
-          `https://openweathermap.org/img/wn/${item.weather[0].icon}.png`;
+        const iconUrl =
+          `https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`;
 
         return (
-          <div className="col-6 col-md-4 mb-3" key={index}>
-            <div className="forecast-card">
+          <div className="forecast-card" key={index}>
 
-              <h6>{getDay(item.dt_txt)}</h6>
+            <h6 className="forecast-day">
+              {getDayName(item.dt_txt)}
+            </h6>
 
-              <img src={icon} />
+            <img
+              src={iconUrl}
+              alt="weather icon"
+              className="forecast-icon"
+            />
 
-              <p>{Math.round(item.main.temp)}°C</p>
+            <p className="forecast-temp">
+              {Math.round(item.main.temp)}°C
+            </p>
 
-              <small>{item.weather[0].main}</small>
+            <small className="forecast-condition">
+              {item.weather[0].main}
+            </small>
 
-            </div>
           </div>
         );
       })}
