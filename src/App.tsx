@@ -26,7 +26,7 @@ function App() {
           >
             {darkMode ? "Light" : "Dark"}
           </button>
-        </div>
+        
 
         <SearchBar onSearch={fetchWeather} />
 
@@ -38,7 +38,7 @@ function App() {
 
       </div>
 
-    </div>
+</div>
   );
 }
 

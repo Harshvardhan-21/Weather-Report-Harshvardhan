@@ -35,5 +35,13 @@
   "main": "eslint.config.js",
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Harshvardhan-21/Weather-Report-Harshvardhan.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Harshvardhan-21/Weather-Report-Harshvardhan/issues"
+  },
+  "homepage": "https://github.com/Harshvardhan-21/Weather-Report-Harshvardhan#readme"
 }
