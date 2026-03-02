@@ -2,6 +2,12 @@
 RESET
 ========================= */
 
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
 *{
   margin:0;
   padding:0;
@@ -36,10 +42,9 @@ APP WRAPPER (CENTER FIX)
   min-height:100vh;
   width:100%;
   display:flex;
-  justify-content:center;
-  align-items:center;
+  justify-content:center;   /* horizontal center */
+  align-items:center;       /* vertical center */
   padding:20px;
-  margin-left: 400px;
 }
 
 /* =========================
@@ -49,6 +54,7 @@ MAIN CARD
 .weather-card{
   width:100%;
   max-width:520px;
+  margin:0 auto;   /* extra safety */
   padding:30px;
 
   background:rgba(255,255,255,0.18);
@@ -56,8 +62,6 @@ MAIN CARD
 
   border-radius:25px;
   box-shadow:0 15px 45px rgba(0,0,0,0.35);
-
-  transition:0.3s;
 }
 
 .weather-card:hover{
@@ -174,7 +178,22 @@ FORECAST GRID
   background:rgba(255,255,255,0.4);
 }
 
-.forecast-icon{
+.for .search-container{
+    flex-direction:column;
+  }
+
+  .search-btn{
+    width:100%;
+  }
+
+  .forecast-container{
+    grid-template-columns:1fr;
+  }
+
+  h1{
+    font-size:32px;
+  }
+}ecast-icon{
   width:50px;
 }
 
@@ -206,16 +225,26 @@ TABLET
 MOBILE
 ========================= */
 
+/* Prevent horizontal scroll on mobile */
+body{
+  overflow-x:hidden;
+}
+
+/* =========================
+MOBILE FIX (PERFECT CENTER)
+========================= */
+
 @media(max-width:480px){
 
-  .header{
-    flex-direction:column;
+  .app-wrapper{
+    padding:15px;
     align-items:flex-start;
   }
 
-  .mode-btn{
-    font-size:13px;
-    padding:6px 12px;
+  .weather-card{
+    width:100%;
+    max-width:100%;
+    margin:0 auto;
   }
 
   .search-container{
@@ -229,8 +258,6 @@ MOBILE
   .forecast-container{
     grid-template-columns:1fr;
   }
-
-  h1{
-    font-size:32px;
-  }
 }
+
+ 
