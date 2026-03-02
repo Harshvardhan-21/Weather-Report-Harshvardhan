@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SearchBar from "./Components/SearchBar";
 import CurrentWeather from "./Components/CurrentWeather";
 import Forecast from "./Components/Forecast";
@@ -10,14 +10,17 @@ function App() {
   const { weather, forecast, loading, error, fetchWeather } = useWeather();
   const [darkMode, setDarkMode] = useState(false);
 
-  document.body.className = darkMode ? "dark" : "light";
+  // Proper Dark Mode Handling
+  useEffect(() => {
+    document.body.className = darkMode ? "dark" : "light";
+  }, [darkMode]);
 
   return (
     <div className="app-wrapper">
 
       <div className="weather-card">
 
-      
+        <div className="header">
           <h2>Weather Report || Harsh</h2>
 
           <button
@@ -26,7 +29,7 @@ function App() {
           >
             {darkMode ? "Light" : "Dark"}
           </button>
-        
+        </div>
 
         <SearchBar onSearch={fetchWeather} />
 
@@ -38,7 +41,7 @@ function App() {
 
       </div>
 
-</div>
+    </div>
   );
 }
 
