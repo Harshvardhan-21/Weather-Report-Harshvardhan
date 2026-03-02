@@ -8,10 +8,6 @@ RESET
   box-sizing:border-box;
 }
 
-html, body{
-  height:100%;
-}
-
 body{
   font-family:"Poppins",sans-serif;
   transition:0.4s;
@@ -22,16 +18,18 @@ BACKGROUND
 ========================= */
 
 body.light{
+  min-height:100vh;
   background:linear-gradient(135deg,#667eea,#764ba2,#6dd5ed);
 }
 
 body.dark{
+  min-height:100vh;
   background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
   color:white;
 }
 
 /* =========================
-APP WRAPPER (FULL CENTER FIX)
+APP WRAPPER (CENTER FIX)
 ========================= */
 
 .app-wrapper{
@@ -50,7 +48,6 @@ MAIN CARD
 .weather-card{
   width:100%;
   max-width:520px;
-  margin:auto;              /* 🔥 IMPORTANT FIX */
   padding:30px;
 
   background:rgba(255,255,255,0.18);
@@ -76,7 +73,6 @@ HEADER
   align-items:center;
   margin-bottom:20px;
   gap:10px;
-  flex-wrap:wrap;
 }
 
 .header h2{
@@ -94,6 +90,7 @@ DARK MODE BUTTON
   background:black;
   color:white;
   cursor:pointer;
+  white-space:nowrap;
   transition:0.3s;
 }
 
@@ -109,12 +106,10 @@ SEARCH BAR
   display:flex;
   gap:10px;
   margin-bottom:20px;
-  flex-wrap:wrap;
 }
 
 .search-input{
   flex:1;
-  min-width:0;
   padding:12px;
   border-radius:12px;
   border:none;
@@ -212,14 +207,14 @@ MOBILE
 
 @media(max-width:480px){
 
-  .app-wrapper{
-    align-items:flex-start;
-    padding-top:40px;
-  }
-
   .header{
     flex-direction:column;
     align-items:flex-start;
+  }
+
+  .mode-btn{
+    font-size:13px;
+    padding:6px 12px;
   }
 
   .search-container{
