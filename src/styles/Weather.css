@@ -211,15 +211,13 @@ MOBILE PERFECT FIX
 ========================= */
 
 @media(max-width:480px){
-
-  .app-wrapper{
+.app-wrapper{
     align-items:flex-start;
-    padding:15px;
+    padding:20px 15px 60px 15px;  
   }
 
-  .weather-card{
-    max-width:100%;
-    padding:20px;
+   .weather-card{
+    margin-bottom:40px;  
   }
 
   .header{
