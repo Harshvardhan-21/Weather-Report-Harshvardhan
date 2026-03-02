@@ -16,7 +16,7 @@ html, body, #root{
 body{
   font-family:"Poppins",sans-serif;
   transition:0.4s;
-  overflow-x:hidden;
+  overflow-x:hidden;   /* prevent right shift */
 }
 
 /* =========================
@@ -207,20 +207,20 @@ TABLET
 }
 
 /* =========================
-MOBILE (PERFECT FIX)
+MOBILE PERFECT FIX
 ========================= */
 
 @media(max-width:480px){
 
   .app-wrapper{
     align-items:flex-start;
-    padding:20px 15px 60px 15px; /* bottom space fix */
+    padding:15px;
   }
 
   .weather-card{
     max-width:100%;
     padding:20px;
-    margin-bottom:40px;
+    margin-bottom: 40px;
   }
 
   .header{
